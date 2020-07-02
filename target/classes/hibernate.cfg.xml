@@ -10,7 +10,9 @@
 <property name="dialect">org.hibernate.dialect.MySQL57Dialect</property>
 <property name="hbm2ddl.auto">update</property>
 <property name="show_sql">true</property>
-
+<mapping class="uha.anis.fr.entities.User"  />
+<mapping class="uha.anis.fr.entities.Category"  />
+<mapping class="uha.anis.fr.entities.Product"  />
 </session-factory>
 
 </hibernate-configuration>
