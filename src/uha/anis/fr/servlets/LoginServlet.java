@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import uha.anis.fr.dao.UserDAO;
-import uha.anis.fr.dao.UserDAOImpl;
+import uha.anis.fr.dao.user.UserDAO;
+import uha.anis.fr.dao.user.UserDAOImpl;
 import uha.anis.fr.entities.User;
 
 /**

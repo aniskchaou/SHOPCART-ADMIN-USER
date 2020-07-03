@@ -6,23 +6,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import uha.anis.fr.dao.user.UserDAO;
-import uha.anis.fr.dao.user.UserDAOImpl;
-import uha.anis.fr.entities.User;
 
 /**
- * Servlet implementation class RegisterServlet
+ * Servlet implementation class CategoryServlet
  */
-@WebServlet("/RegisterServlet")
-public class RegisterServlet extends HttpServlet {
+@WebServlet("/CategoryServlet")
+public class CategoryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public UserDAO userDAO=new UserDAOImpl();
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RegisterServlet() {
+    public CategoryServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -39,20 +34,8 @@ public class RegisterServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//String categoryName=request.getAttribute("");
 		
-		
-		String userEmail=request.getParameter("user_email");
-		String userPassword=request.getParameter("user_password");
-		String userPhone=request.getParameter("user_phone");
-		String userPhoto=request.getParameter("user_photo");
-		String userAddress=request.getParameter("user_address");
-		
-		User user=new User(userEmail, userPassword, userPhone, "default.jpg", userAddress);
-		userDAO.addUser(user);
-		
-		HttpSession  httpSession=request.getSession();
-		httpSession.setAttribute("message", "Registration Successful !!!");
-		response.sendRedirect("index.jsp");
 	}
 
 }

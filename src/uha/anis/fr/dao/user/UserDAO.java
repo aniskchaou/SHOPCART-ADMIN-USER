@@ -1,4 +1,4 @@
-package uha.anis.fr.dao;
+package uha.anis.fr.dao.user;
 
 import uha.anis.fr.entities.User;
 
