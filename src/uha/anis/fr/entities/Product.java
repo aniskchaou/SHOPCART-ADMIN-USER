@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "product")
+@Table(name = "productt")
 public class Product {
    
 	@Id
@@ -29,7 +29,7 @@ public class Product {
 	@Column(length = 100,name="p_quantity")
 	int pQuantity;
 	@ManyToOne
-	Category category;
+	Category category_id;
 	
 	
 	public Product() {
@@ -47,7 +47,7 @@ public class Product {
 		this.pPrice = pPrice;
 		this.pDiscount = pDiscount;
 		this.pQuantity = pQuantity;
-		this.category = category;
+		this.category_id = category;
 	}
 
 
@@ -62,7 +62,7 @@ public class Product {
 		this.pPrice = pPrice;
 		this.pDiscount = pDiscount;
 		this.pQuantity = pQuantity;
-		this.category = category;
+		this.category_id = category;
 	}
 
 
@@ -130,11 +130,11 @@ public class Product {
 	}
 
 	public Category getCategory() {
-		return category;
+		return category_id;
 	}
 
 	public void setCategory(Category category) {
-		this.category = category;
+		this.category_id = category;
 	}
 	
 	

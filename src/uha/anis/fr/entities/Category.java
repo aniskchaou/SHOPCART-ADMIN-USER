@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "category")
+@Table(name = "categoryy")
 public class Category {
 
 	@Id
@@ -23,7 +23,7 @@ public class Category {
 	String categoryTitle;
 	@Column(length = 100,name="cat_description")
 	String categoryDescription;
-	@OneToMany(mappedBy = "category")
+	@OneToMany(mappedBy = "category_id")
 	List<Product> products=new ArrayList<Product>();
 	public Category() {
 		// TODO Auto-generated constructor stub
