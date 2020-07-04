@@ -16,6 +16,11 @@
       <version>8.5.46</version>
     </dependency>
     <dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <version>42.2.14</version>
+</dependency>
+    <dependency>
       <groupId>org.apache.tomcat</groupId>
       <artifactId>tomcat-catalina-ha</artifactId>
       <version>8.5.46</version>
