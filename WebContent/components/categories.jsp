@@ -1,7 +1,8 @@
 <%@page import="java.util.List"%>
+<%@page import="uha.anis.fr.dao.category.CategoryDAO"%>
 <%@page import="uha.anis.fr.entities.Category"%>
 <%@page import="uha.anis.fr.dao.category.CategoryDAOImpl"%>
-<%@page import="uha.anis.fr.dao.category.CategoryDAO"%>
+
 <%
 CategoryDAO categoryDao=new CategoryDAOImpl();
 List<Category> categories=categoryDao.getCategories();

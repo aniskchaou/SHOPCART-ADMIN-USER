@@ -161,6 +161,12 @@
       <version>8.5.46</version>
     </dependency>
     <dependency>
+  <groupId>javax.servlet.jsp</groupId>
+  <artifactId>jsp-api</artifactId>
+  <version>2.1</version>
+  <scope>provided</scope>
+</dependency>
+    <dependency>
       <groupId>org.apache.tomcat</groupId>
       <artifactId>tomcat-websocket-api</artifactId>
       <version>8.5.46</version>
