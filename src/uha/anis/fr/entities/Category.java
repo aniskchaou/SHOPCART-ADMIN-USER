@@ -17,14 +17,30 @@ public class Category {
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
 	@Column(length = 10,name="cat_id")
 	int categoryId;
-	@Column(length = 10,name="cat_title")
+	@Column(length = 100,name="cat_title")
 	String categoryTitle;
-	@Column(length = 10,name="cat_description")
+	@Column(length = 100,name="cat_description")
 	String categoryDescription;
 	@OneToMany(mappedBy = "category")
 	List<Product> products=new ArrayList<Product>();
 	public Category() {
 		// TODO Auto-generated constructor stub
+	}
+
+   
+
+	public Category(String categoryTitle, String categoryDescription) {
+		this.categoryTitle = categoryTitle;
+		this.categoryDescription = categoryDescription;
+	}
+
+   
+
+	public Category(int categoryId, String categoryTitle, String categoryDescription) {
+		super();
+		this.categoryId = categoryId;
+		this.categoryTitle = categoryTitle;
+		this.categoryDescription = categoryDescription;
 	}
 
 

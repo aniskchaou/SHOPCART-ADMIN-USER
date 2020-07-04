@@ -3,12 +3,12 @@
    User user=(User)session.getAttribute("current-user");
 if(user==null)
 {
-	response.sendRedirect("user/login.jsp");
+	response.sendRedirect(request.getContextPath()+"/user/login.jsp");
 }else
 {
 	if(user.getUserType().equals("normal"))
 	{
-		response.sendRedirect("user/login.jsp");
+		response.sendRedirect(request.getContextPath()+"/user/login.jsp");
 	}
 }
 

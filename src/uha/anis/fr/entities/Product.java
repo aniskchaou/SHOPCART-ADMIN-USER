@@ -12,19 +12,19 @@ public class Product {
    
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(length = 10,name="p_id")
+	@Column(length = 100,name="p_id")
 	int pId;
-	@Column(length = 10,name="p_name")
+	@Column(length = 100,name="p_name")
 	String pName;
-	@Column(length = 10,name="p_description")
+	@Column(length = 100,name="p_description")
 	String pDescription;
-	@Column(length = 10,name="p_photo")
+	@Column(length = 100,name="p_photo")
 	String pPhoto;
-	@Column(length = 10,name="p_price")
+	@Column(length = 1000,name="p_price")
 	int pPrice;
-	@Column(length = 10,name="p_discount")
+	@Column(length = 100,name="p_discount")
 	int pDiscount;
-	@Column(length = 10,name="p_quantity")
+	@Column(length = 100,name="p_quantity")
 	int pQuantity;
 	@ManyToOne
 	Category category;
@@ -32,6 +32,20 @@ public class Product {
 	
 	public Product() {
 		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public Product(String pName, String pDescription, String pPhoto, int pPrice, int pDiscount, int pQuantity,
+			Category category) {
+		super();
+		this.pName = pName;
+		this.pDescription = pDescription;
+		this.pPhoto = pPhoto;
+		this.pPrice = pPrice;
+		this.pDiscount = pDiscount;
+		this.pQuantity = pQuantity;
+		this.category = category;
 	}
 
 

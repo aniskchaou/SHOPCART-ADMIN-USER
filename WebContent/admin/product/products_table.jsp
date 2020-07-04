@@ -1,7 +1,12 @@
-            <div class="col-md-12 stretch-card">
+            <%@page import="uha.anis.fr.entities.Product"%>
+<%@page import="java.util.List"%>
+<%@page import="uha.anis.fr.dao.product.ProductDAOImpl"%>
+<%@page import="uha.anis.fr.dao.product.ProductDAO"%>
+<div class="col-md-12 stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title">Recent Purchases</p>
+                  <p class="card-title">List of products</p>
+                  <a href="add_product.jsp" class="btn btn-success" type="button"> <i class="mdi  mdi-plus-circle-outline menu-icon"></i></a>
                   <div class="table-responsive">
                     <table id="recent-purchases-listing" class="table">
                       <thead>
@@ -12,73 +17,29 @@
                             <th>Price </th>
                             <th>Quantity</th>
                             <th>Category</th>
+                            <th>Actions</th>
                         </tr>
                       </thead>
                       <tbody>
+                      <% 
+                      ProductDAO productDAO=new ProductDAOImpl();
+                      List<Product> products=productDAO.getProducts();
+                      for(Product p:products)
+                      {
+                      %>
+                     
                         <tr>
-                            <td>Jeremy Ortega</td>
-                            <td>Levelled up</td>
-                            <td>Catalinaborough</td>
-                            <td>$790</td>
-                            <td>06 Jan 2018</td>
-                            <td>$2274253</td>
+                            <td><img  src="<%="../../assets/products/"+p.getpPhoto() %>" height="35" width="35" /></td>
+                            <td><%= p.getpName() %></td>
+                            <td><%= p.getpDiscount() %></td>
+                            <td><%= p.getpPrice() %></td>
+                            <td><%= p.getpQuantity() %></td>
+                            <td><%= p.getCategory().getCategoryTitle() %></td>
+                            <td> <a  href="edit_product.jsp?id=<%= p.getpId() %>" type="button" class="btn btn-warning" class="btn btn-warning"><i class="mdi  mdi-tooltip-edit menu-icon"></i></a>
+                             <a type="button"  href="<%=request.getContextPath()+"/ProductServlet?id="+ p.getpId() %>" class="btn btn-danger" ><i class="mdi  mdi-delete menu-icon"></i></a>
+                             </td>
                         </tr>
-                        <tr>
-                            <td>Alvin Fisher</td>
-                            <td>Ui design completed</td>
-                            <td>East Mayra</td>
-                            <td>$23230</td>
-                            <td>18 Jul 2018</td>
-                            <td>$83127</td>
-                        </tr>
-                        <tr>
-                            <td>Emily Cunningham</td>
-                            <td>support</td>
-                            <td>Makennaton</td>
-                            <td>$939</td>
-                            <td>16 Jul 2018</td>
-                            <td>$29177</td>
-                        </tr>
-                        <tr>
-                            <td>Minnie Farmer</td>
-                            <td>support</td>
-                            <td>Agustinaborough</td>
-                            <td>$30</td>
-                            <td>30 Apr 2018</td>
-                            <td>$44617</td>
-                        </tr>
-                        <tr>
-                            <td>Betty Hunt</td>
-                            <td>Ui design not completed</td>
-                            <td>Lake Sandrafort</td>
-                            <td>$571</td>
-                            <td>25 Jun 2018</td>
-                            <td>$78952</td>
-                        </tr>
-                        <tr>
-                            <td>Myrtie Lambert</td>
-                            <td>Ui design completed</td>
-                            <td>Cassinbury</td>
-                            <td>$36</td>
-                            <td>05 Nov 2018</td>
-                            <td>$36422</td>
-                        </tr>
-                        <tr>
-                            <td>Jacob Kennedy</td>
-                            <td>New project</td>
-                            <td>Cletaborough</td>
-                            <td>$314</td>
-                            <td>12 Jul 2018</td>
-                            <td>$34167</td>
-                        </tr>
-                        <tr>
-                            <td>Ernest Wade</td>
-                            <td>Levelled up</td>
-                            <td>West Fidelmouth</td>
-                            <td>$484</td>
-                            <td>08 Sep 2018</td>
-                            <td>$50862</td>
-                        </tr>
+                      <%} %>
                       </tbody>
                     </table>
                   </div>
