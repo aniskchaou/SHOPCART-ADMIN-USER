@@ -54,25 +54,22 @@ public class LoginServlet extends HttpServlet {
 		HttpSession httpSession=request.getSession();
 		
 		if(user==null)
-		{
+		{   httpSession.setAttribute("message-type", "danger");
 			httpSession.setAttribute("message", "Invalid password or email");
-			response.sendRedirect("user/login.jsp");
+			response.sendRedirect(request.getContextPath()+"/user/login.jsp");
 			
 		}else
-		{   
+		{   httpSession.setAttribute("message-type", "success");
 			 httpSession.setAttribute("message", "Welcome "+user.getUserEmail());
 			
 		     httpSession.setAttribute("current-user", user);
-		     
+		    
 		     if(user.getUserType().equals("admin"))
 		     {
-		    	 response.sendRedirect("admin/admin.jsp");
+		    	 response.sendRedirect(request.getContextPath()+"/admin/admin.jsp");
 		     }else if (user.getUserType().equals("normal"))
 		     {
-		    	 response.sendRedirect("index.jsp"); 
-		     }else
-		     {
-		    	 
+		    	 response.sendRedirect(request.getContextPath()+"/index.jsp"); 
 		     }
 			
 		}

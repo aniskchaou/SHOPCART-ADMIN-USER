@@ -75,4 +75,13 @@ public class ProductDAOImpl implements ProductDAO {
 		return number;
 	}
 
+	@Override
+	public List<Product> getProductsByCategory(int id) {
+		Session hibernaSession=FactoryProvider.getSessionFactory().openSession();
+		Query query=hibernaSession.createQuery("from Product where category_id_cat_id =: cat");
+		query.setParameter("cat", id);
+		List<Product> list=query.list();
+		return list;
+	}
+
 }

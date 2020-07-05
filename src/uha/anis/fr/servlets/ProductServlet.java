@@ -78,6 +78,7 @@ public class ProductServlet extends HttpServlet {
 			    // gets absolute path of the web application
 		        String appPath = request.getServletContext().getRealPath("assets");
 		        // constructs path of the directory to save uploaded file
+		        new File(appPath + File.separator + "products"+File.separator).mkdirs();
 		        String savePath = appPath + File.separator + "products"+File.separator+fileName;
 		         System.out.println(savePath);
 		        FileOutputStream  fos=new FileOutputStream(savePath);

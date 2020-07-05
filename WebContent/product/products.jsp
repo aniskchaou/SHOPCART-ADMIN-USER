@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>All Products</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -34,9 +34,6 @@ Navigation Bar Section
 Body Section 
 -->
 	<div class="row">
-	
-<%@include file="../components/message.jsp" %>	
-	
 <div id="sidebar" class="span3">
   <%@ include file="../components/categories.jsp" %>
 
@@ -48,7 +45,7 @@ Body Section
 	</div>
 	<div class="span9">
 
-	<%@ include file="components/login-form.jsp" %>
+	<%@ include file="components/list_products.jsp" %>
 
 	</div>
 	</div>

@@ -12,7 +12,7 @@ Lower Header Section
 <div class="row">
 	<div class="span4">
 	<h1>
-	<a class="logo" href="<%= request.getContextPath()+"/index.jsp" %>"> 
+		<a class="logo" href="<%= request.getContextPath()+"/index.jsp" %>"> 
 		<img src="<%= request.getContextPath()+"/assets/img/logo-bootstrap-shoping-cart.png" %>" alt="">
 	</a>
 	</h1>

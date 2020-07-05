@@ -8,7 +8,7 @@
 	
 	%>
 		<div class="well well-small">
-		  <h3><a class="btn btn-mini pull-right" href="products.html" title="View more">VIew More<span class="icon-plus"></span></a> Featured Products  </h3>
+		  <h3><a class="btn btn-mini pull-right" href="product/products.jsp" title="View more">VIew More<span class="icon-plus"></span></a> Featured Products  </h3>
 		  <hr class="soften"/>
 		  <div class="row-fluid">
 		  <ul class="thumbnails">

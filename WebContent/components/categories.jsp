@@ -15,7 +15,7 @@ List<Category> categories=categoryDao.getCategories();
 	  for(Category c:categories)
 	  {
 	  %>
-		<li><a href="products.html"><span class="icon-chevron-right"></span><%= c.getCategoryTitle() %></a></li>
+		<li><a href="<%= request.getContextPath()+"/category/categories.jsp?id_cat="+c.getCategoryId()  %>"><span class="icon-chevron-right"></span><%= c.getCategoryTitle() %></a></li>
 		<%
 	  }
 		%>
@@ -26,3 +26,14 @@ List<Category> categories=categoryDao.getCategories();
 		
 	</ul>
 </div>
+
+
+
+  <div class="well well-small alert alert-warning cntr">
+				  <h2>50% Discount</h2>
+				  <p> 
+					 only valid for online order. <br><br><a class="defaultBtn" href="#">Click here </a>
+				  </p>
+			  </div>
+			  <div class="well well-small" ><a href="#"><img src="<%= request.getContextPath()+"/assets/img/paypal.jpg" %>" alt="payment method paypal"></a></div>
+			

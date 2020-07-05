@@ -7,11 +7,16 @@
     List<Product> products=productDAO.getProducts();
 	
 	%>
-	
+	 <ul class="breadcrumb">
+		<li><a href="#">Home</a> <span class="divider">/</span></li>
+		<li class="active">Products</li>
+    </ul>
+		
+	<hr class="soft">
 	<div class="well well-small">
 	<h3>New Products </h3>
 	<hr class="soften"/>
-    <%@include file="carousel_products.jsp" %>
+
 		<div class="row-fluid">
 		  <ul class="thumbnails">
 			<%

@@ -50,9 +50,19 @@ public class User {
 		this.userPhone = userPhone;
 		this.userPic = userPic;
 		this.userAdress = userAdress;
-		this.userType="normal";
+		this.userType="admin";
 	}
 
+	public User(String userEmail, String userPassword, String userPhone, String userPic, String userAdress,
+			String userType) {
+		super();
+		this.userEmail = userEmail;
+		this.userPassword = userPassword;
+		this.userPhone = userPhone;
+		this.userPic = userPic;
+		this.userAdress = userAdress;
+		this.userType = userType;
+	}
 	public int getUserId() {
 		return userId;
 	}

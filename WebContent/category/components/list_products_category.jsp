@@ -1,17 +1,26 @@
-	<%@page import="uha.anis.fr.dao.product.ProductDAOImpl"%>
+	<%@page import="uha.anis.fr.dao.category.CategoryDAOImpl"%>
+<%@page import="uha.anis.fr.dao.category.CategoryDAO"%>
+<%@page import="uha.anis.fr.entities.Category"%>
+<%@page import="uha.anis.fr.dao.product.ProductDAOImpl"%>
 <%@page import="java.util.List"%>
 <%@page import="uha.anis.fr.entities.Product"%>
 <%@page import="uha.anis.fr.dao.product.ProductDAO"%>
 <%
+    String id_cat=request.getParameter("id_cat");
+    CategoryDAO  categoryDAO=new CategoryDAOImpl();
+    Category  category=categoryDAO.getCategoryById(Integer.parseInt(id_cat));
 	ProductDAO productDAO=new ProductDAOImpl();
-    List<Product> products=productDAO.getProducts();
+    List<Product> products=productDAO.getProductsByCategory(Integer.parseInt(id_cat));
 	
 	%>
-	
+	 <ul class="breadcrumb">
+		<li><a href="index.html">Home</a> <span class="divider">/</span></li>
+		<li class="active">Category</li>
+    </ul>
+	<hr class="soft">
 	<div class="well well-small">
-	<h3>New Products </h3>
+	<h3><%= category.getCategoryTitle() %>  </h3>
 	<hr class="soften"/>
-    <%@include file="carousel_products.jsp" %>
 		<div class="row-fluid">
 		  <ul class="thumbnails">
 			<%
