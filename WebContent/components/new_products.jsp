@@ -20,11 +20,13 @@
 			
 			%>
 			<li class="span4">
-			  <div class="thumbnail"> 
+			  <div class="thumbnail" height="50" width="50" > 
 				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img src="<%= request.getContextPath()+"/assets/products/"+p.getpPhoto() %>" alt=""></a>
+				<a href="product_details.html"><img  src="<%= request.getContextPath()+"/assets/products/"+p.getpPhoto() %>" alt=""></a>
 				<div class="caption cntr">
-					<p><%= p.getpName()%></p>
+					<p><% String name=p.getpName().substring(0,18);
+					out.print(name);
+					   %></p>
 					<p><strong> $<%= p.getpPrice() %></strong></p>
 					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
 					

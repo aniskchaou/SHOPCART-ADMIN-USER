@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="uha.anis.fr.service.InitDB"%>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -34,6 +35,9 @@ Navigation Bar Section
 Body Section 
 -->
 	<div class="row">
+	
+	
+	
 	
 <%@include file="components/message.jsp" %>	
 	

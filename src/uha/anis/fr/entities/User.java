@@ -63,6 +63,19 @@ public class User {
 		this.userAdress = userAdress;
 		this.userType = userType;
 	}
+	
+	
+	public User(int userId, String userEmail, String userPassword, String userPhone, String userPic, String userAdress,
+			String userType) {
+		super();
+		this.userId = userId;
+		this.userEmail = userEmail;
+		this.userPassword = userPassword;
+		this.userPhone = userPhone;
+		this.userPic = userPic;
+		this.userAdress = userAdress;
+		this.userType = userType;
+	}
 	public int getUserId() {
 		return userId;
 	}

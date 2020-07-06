@@ -11,4 +11,5 @@ public interface CategoryDAO {
    void UpdateCategory(Category category);
    long getNumberCategory();
 void deteleCategory(Category category);
+
 }
