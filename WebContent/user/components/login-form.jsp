@@ -11,7 +11,7 @@
 			  <div class="control-group">
 				<label class="control-label" for="inputEmail">Username</label>
 				<div class="controls">
-				  <input  name="useremail" class="span3"  type="text" placeholder="Email">
+				  <input  name="useremail" class="span3"  type="text" placeholder="Username">
 				</div>
 			  </div>
 			  	<div class="control-group">

@@ -22,7 +22,7 @@ Lower Header Section
 	</div>
 	<div class="span4 alignR">
 	
-	<span class="btn">( 2 ) <span class="icon-shopping-cart"></span></span>
+	<span class="btn"><a href="<%= request.getContextPath()+"/cart/my_cart.jsp" %>"><span class="badge badge-warning">2</span> <span class="icon-shopping-cart"></span></a></span>
 	</div>
 </div>
 </header>

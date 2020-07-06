@@ -19,7 +19,7 @@
 			%>
 			<li class="span4">
 			  <div class="thumbnail">
-				<a class="zoomTool" href="product_details.html" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+				<a class="zoomTool" href="<%= request.getContextPath()+"/product/product_details.jsp?id_prod="+p.getpId() %>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
 				<a  href="product_details.html"><img src="<%= request.getContextPath()+"/assets/products/"+p.getpPhoto() %>" alt=""></a>
 				<div class="caption">
 				  <h5><%= p.getpName()%></h5>
