@@ -39,7 +39,7 @@ Body Section
 	
 	
 	
-<%@include file="../components/message.jsp" %>	
+<%@include file="components/message.jsp" %>	
 	
 	
 <div id="sidebar" class="span3">

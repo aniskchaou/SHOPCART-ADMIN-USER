@@ -20,11 +20,11 @@
 			<li class="span4">
 			  <div class="thumbnail">
 				<a class="zoomTool" href="<%= request.getContextPath()+"/product/product_details.jsp?id_prod="+p.getpId() %>" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a  href="product_details.html"><img src="<%= request.getContextPath()+"/assets/products/"+p.getpPhoto() %>" alt=""></a>
+				<a  href="<%= request.getContextPath()+"/product/product_details.jsp?id_prod="+p.getpId() %> "><img src="<%= request.getContextPath()+"/assets/products/"+p.getpPhoto() %>" alt=""></a>
 				<div class="caption">
 				  <h5><%= p.getpName()%></h5>
 				  <h4>
-					  <a class="defaultBtn" href="product_details.html" title="Click to view"><span class="icon-zoom-in"></span></a>
+					  <a class="defaultBtn" href="<%= request.getContextPath()+"/product/product_details.jsp?id_prod="+p.getpId() %> " title="Click to view"><span class="icon-zoom-in"></span></a>
 					  <a class="shopBtn" href="<%= request.getContextPath()+"/Cart?id_prod="+p.getpId() %>" title="add to cart"><span class="icon-plus"></span></a>
 					  <span class="pull-right">$<%= p.getpPrice() %></span>
 				  </h4>

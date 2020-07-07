@@ -55,7 +55,7 @@ void addToCart(List<ProductCart> cart,ProductCart productCart)
    {
 	   cart.remove(productCart);
    }
-   public boolean existInCart(List<ProductCart> cart,Product product)
+   public static boolean existInCart(List<ProductCart> cart,Product product)
    {
 	   for (ProductCart productCart : cart) {
 		if(productCart.product.getpId()==product.getpId())
@@ -69,7 +69,7 @@ void addToCart(List<ProductCart> cart,ProductCart productCart)
    }
    
    
-   public int getIndexProduct(List<ProductCart> cart,Product product)
+   public static int getIndexProduct(List<ProductCart> cart,Product product)
    {
 	   int index=0;
 	   for (ProductCart productCart : cart) {
@@ -84,7 +84,7 @@ void addToCart(List<ProductCart> cart,ProductCart productCart)
 	   return index;
    }
   
-   public ProductCart getProductFromList(List<ProductCart> cart,Product product)
+   public static ProductCart getProductFromList(List<ProductCart> cart,Product product)
    {
 	   
 	   for (ProductCart productCart : cart) {
@@ -96,5 +96,28 @@ void addToCart(List<ProductCart> cart,ProductCart productCart)
 			
 		}
 	   return null;
+   }
+   
+   
+   public static void removeFromList(List<ProductCart> cart,Product product)
+   {
+	   
+	   for (ProductCart productCart : cart) {
+			if(productCart.product.getpId()==product.getpId())
+			{
+				  cart.remove(productCart);
+				  return;
+			}
+			
+			
+		}
+	   
+   }
+   
+   public static void removeAll(List<ProductCart> cart)
+   {
+	   
+	   cart.clear();
+	   
    }
 }

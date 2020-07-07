@@ -55,8 +55,8 @@
 				</div>
 				</td>
                   <td>$ <%= p.getProduct().getpPrice()*p.getQuantity() %> </td>
-                  <td><button type="button" class="btn btn-danger"><span class="icon-trash">
-				</span></button>
+                  <td><a  href="<%= request.getContextPath()+"/Cart?action=remove&id_prod="+p.getProduct().getpId() %>" type="button" class="btn btn-danger"><span class="icon-trash">
+				</span></a>
                 </tr>
 			<%
 			total=total+(p.getProduct().getpPrice()*p.getQuantity());
@@ -64,7 +64,7 @@
 	 <%
 	}
     
-	}
+
 	%>		
 			
 			
@@ -72,6 +72,7 @@
 				 <tr>
                   <td colspan="6" class="alignR">Total products:	</td>
                   <td class="label label-primary"> $<%= total %></td>
+                  <td><a  href="<%= request.getContextPath()+"/Cart?action=clear" %>" type="button" class="btn btn-danger">Clear</a></td>
                 </tr>
 				</tbody>
             </table><br>
@@ -80,5 +81,11 @@
 	
 	<a href="<%= request.getContextPath()+"/index.jsp" %>" class="shopBtn btn-large"><span class="icon-arrow-left"></span> Continue Shopping </a>
 	<a href="<%= request.getContextPath()+"/cart/order.jsp" %>" class="shopBtn btn-large pull-right">Next <span class="icon-arrow-right"></span></a>
- 
+ <%}
+     if(myCart.isEmpty())
+	 {
+     session.setAttribute("message-type", "info");
+	 session.setAttribute("message","Your cart is empty.");
+		
+	 }%>
 </div>

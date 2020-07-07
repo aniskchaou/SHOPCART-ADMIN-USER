@@ -6,10 +6,10 @@ Contact : kchaouanis26@gmail.com<br>
 </div>
 
 </footer>
-</div><!-- /container -->
 
 
-<a href="#" class="gotop"><i class="icon-double-angle-up"></i></a>
+
+<a href="#top" class="gotop"><i class="icon-double-angle-up"></i></a>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>

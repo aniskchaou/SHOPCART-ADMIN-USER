@@ -44,7 +44,7 @@
                             if(u.getUserType().equals("normal"))
                             {
                             %>
-                              <a type="button"  href="<%=request.getContextPath()+"/UserServlet?id="+ u.getUserId()%>" class="btn btn-danger" ><i class="mdi  mdi-delete menu-icon"></i></a>
+                              <a type="button"  href="#"  class="btn btn-danger" ><i class="mdi  mdi-delete menu-icon"></i></a>
                              <%
                              }
                             %>

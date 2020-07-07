@@ -22,7 +22,7 @@
 			<li class="span4">
 			  <div class="thumbnail" height="50" width="50" > 
 				<a class="zoomTool" href="<%= request.getContextPath()+"/product/product_details.jsp?id_prod="+p.getpId() %> " title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
-				<a href="product_details.html"><img  src="<%= request.getContextPath()+"/assets/products/"+p.getpPhoto() %>" alt=""></a>
+				<a href="<%= request.getContextPath()+"/product/product_details.jsp?id_prod="+p.getpId() %> "><img  src="<%= request.getContextPath()+"/assets/products/"+p.getpPhoto() %>" alt=""></a>
 				<div class="caption cntr">
 					<p><% String name=p.getpName().substring(0,18);
 					out.print(name);

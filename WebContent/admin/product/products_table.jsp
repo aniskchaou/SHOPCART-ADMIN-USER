@@ -26,6 +26,8 @@
                       List<Product> products=productDAO.getProducts();
                       for(Product p:products)
                       {
+                    	  if(p.getCategory()!=null)
+                    	  {
                       %>
                      
                         <tr>
@@ -39,7 +41,9 @@
                              <a type="button"  href="<%=request.getContextPath()+"/ProductServlet?id="+ p.getpId() %>" class="btn btn-danger" ><i class="mdi  mdi-delete menu-icon"></i></a>
                              </td>
                         </tr>
-                      <%} %>
+                      <%}
+                    	  
+                    	  }%>
                       </tbody>
                     </table>
                   </div>

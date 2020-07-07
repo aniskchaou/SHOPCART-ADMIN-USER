@@ -38,34 +38,57 @@ public class Cart extends HttpServlet {
 		HttpSession session=request.getSession();
 		String id_prod=request.getParameter("id_prod");
 		ProductDAO productDAO=new ProductDAOImpl();
-		
-		Product product=productDAO.getProductById(Integer.parseInt(id_prod));
-		List<ProductCart> myCart=(List<ProductCart>) session.getAttribute("my-cart");
-		if(myCart!=null)
+		String action=request.getParameter("action");
+		Product product=null;
+		if(id_prod!=null)
 		{
-			ProductCart pc=new ProductCart(product,"",1);
-			if(pc.existInCart(myCart, product))
+		 product=productDAO.getProductById(Integer.parseInt(id_prod));
+		}
+		List<ProductCart> myCart=(List<ProductCart>) session.getAttribute("my-cart");
+		if(action==null)
+		{
+			
+			if(myCart!=null)
 			{
-				pc.setProduct(product);
-				int quantity=pc.getProductFromList(myCart, product).getQuantity();			
-			    pc.setQuantity(quantity+1);
-				int index=pc.getIndexProduct(myCart, product);
-				myCart.set(index, pc);
+				ProductCart pc=new ProductCart(product,"",1);
+				if(ProductCart.existInCart(myCart, product))
+				{
+					pc.setProduct(product);
+					int quantity=ProductCart.getProductFromList(myCart, product).getQuantity();			
+				    pc.setQuantity(quantity+1);
+					int index=ProductCart.getIndexProduct(myCart, product);
+					myCart.set(index, pc);
+				}else
+				{
+					ProductCart p=new ProductCart(product, "", 1);
+					myCart.add(p);
+				}
+				
+				session.setAttribute("my-cart", myCart);
+				
 			}else
 			{
-				ProductCart p=new ProductCart(product, "", 1);
-				myCart.add(p);
+				FactoryProvider.productCartList.add(new ProductCart(product, "", 1));
+				session.setAttribute("my-cart", FactoryProvider.productCartList);
+				
 			}
-			
-			session.setAttribute("my-cart", myCart);
-		}else
+			session.setAttribute("message", product.getpName()+" was added to your cart.");
+			session.setAttribute("message-type", "success");
+			response.sendRedirect(request.getContextPath()+"/index.jsp");
+		}else if(action.equals("remove"))
 		{
-			FactoryProvider.productCartList.add(new ProductCart(product, "", 1));
-			session.setAttribute("my-cart", FactoryProvider.productCartList);
-			
+			ProductCart.removeFromList(myCart, product);
+			session.setAttribute("message", product.getpName()+" was removed from your cart.");
+			session.setAttribute("message-type", "success");
+			response.sendRedirect(request.getContextPath()+"/cart/my_cart.jsp");
+		}else if(action.equals("clear"))
+		{
+			ProductCart.removeAll(myCart);
+			session.setAttribute("message", "your cart is empty.");
+			session.setAttribute("message-type", "success");
+			response.sendRedirect(request.getContextPath()+"/cart/my_cart.jsp");
 		}
-		
-		response.sendRedirect(request.getContextPath()+"/index.jsp");
+	
 	}
 
 	/**

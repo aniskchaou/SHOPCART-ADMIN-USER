@@ -23,9 +23,10 @@
 
 	<!-- Favicons -->
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <style> html { scroll-behavior: smooth;} </style>
   </head>
-<body>
-
+<body >
+<a id="top"></a>
 <%@include file="components/header.jsp" %>
 <!--
 Navigation Bar Section 

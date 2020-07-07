@@ -25,10 +25,10 @@ Product product=productDAO.getProductById(Integer.parseInt(id_prod));
             </div>
 			</div>
 			<div class="span7">
-				<h3><%= product.getpName()%>[<%= product.getpPrice() %> $] </h3>
+				<h3><%= product.getpName()%> </h3>
 				<hr class="soft">
 				
-				
+				<!--  
 				  <div class="control-group">
 					<label class="control-label"><span>Quantity</span></label>
 					<div class="controls">
@@ -58,6 +58,9 @@ Product product=productDAO.getProductById(Integer.parseInt(id_prod));
 						</select>
 					</div>
 				  </div>
+				  -->
+				  <h2 ><%= product.getpPrice() %> $</h2>
+				  <h4>Discount : <%= product.getpDiscount() %> %</h4>
 				  <h4><%= product.getpQuantity() %> items in stock</h4>
 				  <p><%= product.getpDescription() %>
 				  </p><p>

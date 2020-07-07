@@ -10,7 +10,7 @@ if(user1!=null)
 %>
 	<hr class="soft">
 	<div class="well">
-	<form class="form-horizontal" action="../Cart" method="post">
+	<form class="form-horizontal" action="<%=request.getContextPath()+"/OrderServlet" %>" method="post">
 		
 		
 		
