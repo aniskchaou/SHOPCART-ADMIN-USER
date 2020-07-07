@@ -57,7 +57,7 @@ Body Section
 <!--
 New Products
 -->
-<%@ include file="components/checkout_form.jsp" %>
+<%@ include file="components/order_form.jsp" %>
 
 	</div>
 	</div>

@@ -28,7 +28,7 @@ Product product=productDAO.getProductById(Integer.parseInt(id_prod));
 				<h3><%= product.getpName()%>[<%= product.getpPrice() %> $] </h3>
 				<hr class="soft">
 				
-				<form class="form-horizontal qtyFrm">
+				
 				  <div class="control-group">
 					<label class="control-label"><span>Quantity</span></label>
 					<div class="controls">
@@ -61,8 +61,8 @@ Product product=productDAO.getProductById(Integer.parseInt(id_prod));
 				  <h4><%= product.getpQuantity() %> items in stock</h4>
 				  <p><%= product.getpDescription() %>
 				  </p><p>
-				  <button type="submit" class="shopBtn"><span class=" icon-shopping-cart"></span> Add to cart</button>
-				</p></form>
+				  <a href="<%= request.getContextPath()+"/Cart?id_prod="+product.getpId() %>" type="button" class="shopBtn"><span class=" icon-shopping-cart"></span> Add to cart</a>
+				</p>
 			</div>
 			</div>
 				<hr class="softn clr">

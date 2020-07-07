@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<%@page import="uha.anis.fr.service.InitDB"%>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>My cart</title>
+    <title>My profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -26,7 +25,7 @@
   </head>
 <body>
 
-<%@include file="../components/header.jsp" %>
+<%@include file="components/header.jsp" %>
 <!--
 Navigation Bar Section 
 -->
@@ -36,16 +35,11 @@ Body Section
 -->
 	<div class="row">
 	
-	
-	
-	
 <%@include file="../components/message.jsp" %>	
-	
 	
 <div id="sidebar" class="span3">
   <%@ include file="../components/categories.jsp" %>
 
-			
 			
 			<br>
 			<br>
@@ -54,10 +48,7 @@ Body Section
 	</div>
 	<div class="span9">
 
-<!--
-New Products
--->
-<%@ include file="components/checkout_form.jsp" %>
+	<%@ include file="components/profile-table.jsp" %>
 
 	</div>
 	</div>

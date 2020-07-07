@@ -28,7 +28,7 @@
 					out.print(name);
 					   %></p>
 					<p><strong> $<%= p.getpPrice() %></strong></p>
-					<h4><a class="shopBtn" href="#" title="add to cart"> Add to cart </a></h4>
+					<h4><a class="shopBtn" href="<%= request.getContextPath()+"/Cart?id_prod="+p.getpId() %>" title="add to cart"> Add to cart </a></h4>
 					
 					<br class="clr">
 				</div>

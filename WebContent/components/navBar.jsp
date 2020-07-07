@@ -45,8 +45,8 @@
 				  
 				
 				
-				out.print("<li class=\"dropdown\"><a href=\"#\"><span class=\"icon-user\"></span>  "+user.getUserEmail()+"</a></li>");
-				out.print("<li><a href=\"LoginServlet?action=logout\"> <span class=\"icon-signout\"></span> Log Out</a></li>");
+				out.print("<li class=\"dropdown\"><a href=\""+request.getContextPath()+"/user/profile.jsp\"><span class=\"icon-user\"></span>  "+user.getUserEmail()+"</a></li>");
+				out.print("<li><a href=\""+request.getContextPath()+"/LoginServlet?action=logout\"> <span class=\"icon-signout\"></span> Log Out</a></li>");
 			  }
 			%>
 			</ul>

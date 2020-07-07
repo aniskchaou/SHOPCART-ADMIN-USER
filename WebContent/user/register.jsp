@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Register</title>
+    <title>Register </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -34,10 +34,12 @@ Navigation Bar Section
 Body Section 
 -->
 	<div class="row">
+	
+<%@include file="../components/message.jsp" %>	
+	
 <div id="sidebar" class="span3">
   <%@ include file="../components/categories.jsp" %>
 
-			 
 			
 			<br>
 			<br>

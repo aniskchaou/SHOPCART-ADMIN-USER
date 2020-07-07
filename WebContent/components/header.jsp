@@ -6,6 +6,8 @@
 <!--
 Lower Header Section 
 -->
+<%@page import="uha.anis.fr.entities.ProductCart"%>
+<%@page import="java.util.List"%>
 <div class="container">
 <div id="gototop"> </div>
 <header id="header">
@@ -21,8 +23,16 @@ Lower Header Section
 	
 	</div>
 	<div class="span4 alignR">
-	
-	<span class="btn"><a href="<%= request.getContextPath()+"/cart/my_cart.jsp" %>"><span class="badge badge-warning">2</span> <span class="icon-shopping-cart"></span></a></span>
+	<%
+	//HttpSession  session=request.getSession();
+	List<ProductCart> mycart=(List<ProductCart>)session.getAttribute("my-cart");
+	int size=0;
+	if(mycart!=null)
+	{
+		size=mycart.size();
+	}
+	%>
+	<span class="btn"><a href="<%= request.getContextPath()+"/cart/my_cart.jsp" %>"><span class="badge badge-warning"><%= size %></span> <span class="icon-shopping-cart"></span></a></span>
 	</div>
 </div>
 </header>
