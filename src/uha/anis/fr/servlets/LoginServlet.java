@@ -19,59 +19,60 @@ import uha.anis.fr.entities.User;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private User user;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LoginServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String disconnect=request.getParameter("action");
-		if(disconnect.equals("logout"))
-		{
-			HttpSession session=request.getSession();
+	public LoginServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String disconnect = request.getParameter("action");
+		if (disconnect.equals("logout")) {
+			HttpSession session = request.getSession();
 			session.removeAttribute("current-user");
-			response.sendRedirect(request.getContextPath()+"/index.jsp");
-			
+			response.sendRedirect(request.getContextPath() + "/index.jsp");
+
 		}
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String userEmail=request.getParameter("useremail");
-		String userPassword=request.getParameter("password");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String userEmail = request.getParameter("useremail");
+		String userPassword = request.getParameter("password");
 		user = null;
-		UserDAO userDAO=new UserDAOImpl();
-		 user=userDAO.getUserByEmailPassword(userEmail, userPassword);
-		HttpSession httpSession=request.getSession();
-		
-		if(user==null)
-		{   httpSession.setAttribute("message-type", "danger");
+		UserDAO userDAO = new UserDAOImpl();
+		user = userDAO.getUserByEmailPassword(userEmail, userPassword);
+		HttpSession httpSession = request.getSession();
+
+		if (user == null) {
+			httpSession.setAttribute("message-type", "danger");
 			httpSession.setAttribute("message", "Invalid password or email");
-			response.sendRedirect(request.getContextPath()+"/user/login.jsp");
-			
-		}else
-		{   httpSession.setAttribute("message-type", "success");
-			 httpSession.setAttribute("message", "Welcome "+user.getUserEmail());
-			
-		     httpSession.setAttribute("current-user", user);
-		    
-		     if(user.getUserType().equals("admin"))
-		     {
-		    	 response.sendRedirect(request.getContextPath()+"/admin/admin.jsp");
-		     }else if (user.getUserType().equals("normal"))
-		     {
-		    	 response.sendRedirect(request.getContextPath()+"/index.jsp"); 
-		     }
-			
+			response.sendRedirect(request.getContextPath() + "/user/login.jsp");
+
+		} else {
+			httpSession.setAttribute("message-type", "success");
+			httpSession.setAttribute("message", "Welcome " + user.getUserEmail());
+
+			httpSession.setAttribute("current-user", user);
+
+			if (user.getUserType().equals("admin")) {
+				response.sendRedirect(request.getContextPath() + "/admin/admin.jsp");
+			} else if (user.getUserType().equals("normal")) {
+				response.sendRedirect(request.getContextPath() + "/index.jsp");
+			}
+
 		}
 	}
 

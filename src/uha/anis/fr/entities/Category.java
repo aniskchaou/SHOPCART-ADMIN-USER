@@ -16,27 +16,24 @@ import javax.persistence.Table;
 public class Category {
 
 	@Id
-	@GeneratedValue(strategy =GenerationType.AUTO)
-	@Column(length = 10,name="cat_id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(length = 10, name = "cat_id")
 	int categoryId;
-	@Column(length = 100,name="cat_title")
+	@Column(length = 100, name = "cat_title")
 	String categoryTitle;
-	@Column(length = 100,name="cat_description")
+	@Column(length = 100, name = "cat_description")
 	String categoryDescription;
 	@OneToMany(mappedBy = "category_id")
-	List<Product> products=new ArrayList<Product>();
+	List<Product> products = new ArrayList<Product>();
+
 	public Category() {
 		// TODO Auto-generated constructor stub
 	}
-
-   
 
 	public Category(String categoryTitle, String categoryDescription) {
 		this.categoryTitle = categoryTitle;
 		this.categoryDescription = categoryDescription;
 	}
-
-   
 
 	public Category(int categoryId, String categoryTitle, String categoryDescription) {
 		super();
@@ -45,8 +42,6 @@ public class Category {
 		this.categoryDescription = categoryDescription;
 	}
 
-
-
 	public Category(int categoryId, String categoryTitle, String categoryDescription, List<Product> products) {
 		super();
 		this.categoryId = categoryId;
@@ -54,8 +49,6 @@ public class Category {
 		this.categoryDescription = categoryDescription;
 		this.products = products;
 	}
-
-
 
 	public int getCategoryId() {
 		return categoryId;
@@ -87,21 +80,12 @@ public class Category {
 				+ categoryDescription + "]";
 	}
 
-
-
 	public List<Product> getProducts() {
 		return products;
 	}
 
-
-
 	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
-	
-	
-	
-	
-	
-	
+
 }

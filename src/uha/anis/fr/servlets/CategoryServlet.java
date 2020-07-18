@@ -20,61 +20,57 @@ import uha.anis.fr.entities.Category;
 @WebServlet("/CategoryServlet")
 public class CategoryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private CategoryDAO categoryDAO;
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public CategoryServlet() {
-        super();
-        categoryDAO=new CategoryDAOImpl();
-    }
+	private CategoryDAO categoryDAO;
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int idCategory=Integer.parseInt(request.getParameter("id"));
-		Category category=categoryDAO.getCategoryById(idCategory);
-		categoryDAO.deteleCategory(category);
-		System.out.println(category.toString());
-		HttpSession session=request.getSession();
-		session.setAttribute("message", "the category "+idCategory+" is deleted !");
-		response.sendRedirect(request.getContextPath()+"/admin/category/categories.jsp");
+	public CategoryServlet() {
+		super();
+		categoryDAO = new CategoryDAOImpl();
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String action=request.getParameter("action");
-		if(action.equals("add"))
-		{
-			String categoryName=(String) request.getParameter("category_name");
-			String categoryDescription=(String) request.getParameter("category_description");
-			Category category=new Category(categoryName, categoryDescription);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		int idCategory = Integer.parseInt(request.getParameter("id"));
+		Category category = categoryDAO.getCategoryById(idCategory);
+		categoryDAO.deteleCategory(category);
+		System.out.println(category.toString());
+		HttpSession session = request.getSession();
+		session.setAttribute("message", "the category " + idCategory + " is deleted !");
+		response.sendRedirect(request.getContextPath() + "/admin/category/categories.jsp");
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String action = request.getParameter("action");
+		if (action.equals("add")) {
+			String categoryName = (String) request.getParameter("category_name");
+			String categoryDescription = (String) request.getParameter("category_description");
+			Category category = new Category(categoryName, categoryDescription);
 			categoryDAO.addCategory(category);
-			HttpSession session=request.getSession();
+			HttpSession session = request.getSession();
 			session.setAttribute("message", "New categorie is creacted !");
-			response.sendRedirect(request.getContextPath()+"/admin/category/categories.jsp");
-		}else
-		{
-			String categoryName=(String) request.getParameter("category_name");
-			String categoryDescription=(String) request.getParameter("category_description");
-			int categoryId=Integer.parseInt(request.getParameter("category_id"));
-			Category category=new Category(categoryId,categoryName,categoryDescription);
+			response.sendRedirect(request.getContextPath() + "/admin/category/categories.jsp");
+		} else {
+			String categoryName = (String) request.getParameter("category_name");
+			String categoryDescription = (String) request.getParameter("category_description");
+			int categoryId = Integer.parseInt(request.getParameter("category_id"));
+			Category category = new Category(categoryId, categoryName, categoryDescription);
 			categoryDAO.UpdateCategory(category);
-			HttpSession session=request.getSession();
+			HttpSession session = request.getSession();
 			session.setAttribute("message", "The categorie is updated !");
-			response.sendRedirect(request.getContextPath()+"/admin/category/categories.jsp");
+			response.sendRedirect(request.getContextPath() + "/admin/category/categories.jsp");
 		}
-		
-		
-		
-		
-		
-		
-		
-		
+
 	}
 
 }

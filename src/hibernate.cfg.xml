@@ -2,41 +2,37 @@
 
 
 <hibernate-configuration>
-<session-factory>
-  
-<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-<property name="connection.url">jdbc:mysql://localhost:3306/mycart</property>
-<property name="connection.username">root</property>
-<property name="connection.password">root</property>
-<property name="dialect">org.hibernate.dialect.MySQL57Dialect</property>
+	<session-factory>
+
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/mycart</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		<property name="dialect">org.hibernate.dialect.MySQL57Dialect</property>
 
 
-      <!--    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
-        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.username">postgres</property>
-        <property name="hibernate.connection.password">root</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/mycart</property>
--->
+		<!-- <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property> 
+			<property name="hibernate.connection.driver_class">org.postgresql.Driver</property> 
+			<property name="hibernate.connection.username">postgres</property> <property 
+			name="hibernate.connection.password">root</property> <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/mycart</property> -->
 
-<!--  
-<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
-          <property name="connection.driver_class">org.postgresql.Driver</property>
-
-<property name="connection.username">xawdxtzaavhpjc</property>
-<property name="connection.password">035f862ae8c8eee3509da99a7d11eca7d6df6b0780795ccce7ec716c7a66ed49</property>
-<property name="connection.url">
-     jdbc:postgresql://ec2-34-200-15-192.compute-1.amazonaws.com:5432/dsmeaice99ob1
-</property>
--->
+		<!-- <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property> 
+			<property name="connection.driver_class">org.postgresql.Driver</property> 
+			<property name="connection.username">xawdxtzaavhpjc</property> <property 
+			name="connection.password">035f862ae8c8eee3509da99a7d11eca7d6df6b0780795ccce7ec716c7a66ed49</property> 
+			<property name="connection.url"> jdbc:postgresql://ec2-34-200-15-192.compute-1.amazonaws.com:5432/dsmeaice99ob1 
+			</property> -->
 
 
 
-<property name="hbm2ddl.auto">create-drop</property>
-<property name="show_sql">true</property>
-<mapping class="uha.anis.fr.entities.User"  />
-<mapping class="uha.anis.fr.entities.Product"  />
-<mapping class="uha.anis.fr.entities.Category"  />
+		<property name="hbm2ddl.auto">create-drop</property>
+		<property name="show_sql">true</property>
+		
+		
+		<mapping class="uha.anis.fr.entities.User" />
+		<mapping class="uha.anis.fr.entities.Product" />
+		<mapping class="uha.anis.fr.entities.Category" />
 
-</session-factory>
+	</session-factory>
 
 </hibernate-configuration>

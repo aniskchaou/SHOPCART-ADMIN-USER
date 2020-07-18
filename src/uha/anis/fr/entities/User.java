@@ -13,24 +13,25 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(length = 10,name="userr_id")
+	@Column(length = 10, name = "userr_id")
 	int userId;
-	@Column(length = 10,name="userr_email")
+	@Column(length = 10, name = "userr_email")
 	String userEmail;
-	@Column(length = 100,name="userr_password")
+	@Column(length = 100, name = "userr_password")
 	String userPassword;
-	@Column(length = 100,name="userr_phone")
+	@Column(length = 100, name = "userr_phone")
 	String userPhone;
-	@Column(length = 100,name="userr_pic")
+	@Column(length = 100, name = "userr_pic")
 	String userPic;
-	@Column(length = 100,name="userr_address")
+	@Column(length = 100, name = "userr_address")
 	String userAdress;
-	@Column(length = 100,name="userr_type")
+	@Column(length = 100, name = "userr_type")
 	String userType;
-	
+
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
+
 	public User(int userId, String userEmail, String userPassword, String userPhone, String userPic,
 			String userAdress) {
 		super();
@@ -40,7 +41,7 @@ public class User {
 		this.userPhone = userPhone;
 		this.userPic = userPic;
 		this.userAdress = userAdress;
-		this.userType="normal";
+		this.userType = "normal";
 	}
 
 	public User(String userEmail, String userPassword, String userPhone, String userPic, String userAdress) {
@@ -50,7 +51,7 @@ public class User {
 		this.userPhone = userPhone;
 		this.userPic = userPic;
 		this.userAdress = userAdress;
-		this.userType="admin";
+		this.userType = "admin";
 	}
 
 	public User(String userEmail, String userPassword, String userPhone, String userPic, String userAdress,
@@ -63,8 +64,7 @@ public class User {
 		this.userAdress = userAdress;
 		this.userType = userType;
 	}
-	
-	
+
 	public User(int userId, String userEmail, String userPassword, String userPhone, String userPic, String userAdress,
 			String userType) {
 		super();
@@ -76,6 +76,7 @@ public class User {
 		this.userAdress = userAdress;
 		this.userType = userType;
 	}
+
 	public int getUserId() {
 		return userId;
 	}
@@ -127,15 +128,15 @@ public class User {
 	public String getUserType() {
 		return userType;
 	}
+
 	public void setUserType(String userType) {
 		this.userType = userType;
 	}
+
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", userEmail=" + userEmail + ", userPassword=" + userPassword + ", userPhone="
 				+ userPhone + ", userPic=" + userPic + ", userAdress=" + userAdress + "]";
 	}
-	
-	
-	
+
 }
