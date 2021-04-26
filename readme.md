@@ -27,10 +27,10 @@ Shop Cart is an e-Commerce web application for an online digital goods store.
 * [License](#license)
 
 ## Documentation
-https://github.com/aniskchaou/STOCKBAY-FRONTEND-ADMIN/wiki
+https://github.com/aniskchaou/ESHOP-FRONTEND-USER/wiki
 
 ## Demo
-https://stock-bay.herokuapp.com/
+https://ecommerce-hibernate-j2ee.herokuapp.com/
 
 ## Screenshots
 <p align="center">
